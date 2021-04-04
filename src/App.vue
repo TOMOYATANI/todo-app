@@ -1,19 +1,35 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <Header></Header>
+    <div class="flex">
+      <Sidebar></Sidebar>
+      <Main>
+        <router-view />
+      </Main>
     </div>
-    <router-view/>
   </div>
 </template>
+
+<script>
+import Header from "@/components/Header.vue";
+import Sidebar from "@/components/Sidebar.vue";
+import Main from "@/components/Main.vue";
+
+export default {
+  components: {
+    Sidebar,
+    Header,
+    Main
+  }
+};
+</script>
 
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  // text-align: center;
   color: #2c3e50;
 }
 
@@ -28,5 +44,36 @@
       color: #42b983;
     }
   }
+}
+</style>
+
+<style lang="scss">
+/* リセット css */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  border: none;
+  box-sizing: border-box;
+  &::-webkit-search-decoration {
+    display: none;
+  }
+  &::focus {
+    outline-offset: -2px;
+  }
+}
+.flex {
+  display: flex;
+  align-items: flex-start;
 }
 </style>
