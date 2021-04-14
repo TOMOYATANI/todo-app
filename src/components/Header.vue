@@ -5,14 +5,15 @@
 </template>
 
 <style lang="scss" scoped>
-  .header {
-    position: sticky;
-    top: 0;
-    background-color: #000000c7;
-    padding: 1rem 3rem;
-    z-index: 999;
-    &__ttl {
-      color: #fff;
-    }
+.header {
+  width: 70%;
+  position: sticky;
+  top: 0;
+  background-color: #000000;
+  padding: 1rem 3rem;
+  z-index: 999;
+  &__ttl {
+    color: #fff;
   }
+}
 </style>

@@ -8,7 +8,7 @@
     </ul>
     <div class="form">
       <form class="form__body" @submit.prevent="addTask">
-        <input type="text" v-model="newTaskName" plabceholder="新しいタスク" class="form__input" />
+        <input type="text" v-model="newTaskName" plabceholder="新しいタスク" placeholder="新しいタスクを入力" class="form__input" />
         <input type="submit" class="form__submit" />
       </form>
       <input type="button" class="form__done" value="タスクを完了にする" @click.prevent="doneTasks" />
@@ -72,18 +72,24 @@ li {
     outline: none;
   }
   &__submit {
-    width: 180px;
+    width: 100px;
     background-color: #000000c7;
     color: #fff;
     padding: 0.5rem 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
   &__done {
-    width: 180px;
+    width: 200px;
     background-color: #000000c7;
     color: #fff;
     padding: 0.5rem 0;
     border: 1px solid #fff;
-    margin-left: 3rem;
+    margin-left: 5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
   }
 }
 </style>

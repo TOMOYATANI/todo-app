@@ -1,8 +1,7 @@
 <template>
-  <div id="app">
+  <div id="app" class="flex-center">
     <Header></Header>
-    <div class="flex">
-      <Sidebar></Sidebar>
+    <div class="inner flex-center">
       <Main>
         <router-view />
       </Main>
@@ -12,12 +11,10 @@
 
 <script>
 import Header from "@/components/Header.vue";
-import Sidebar from "@/components/Sidebar.vue";
 import Main from "@/components/Main.vue";
 
 export default {
   components: {
-    Sidebar,
     Header,
     Main
   }
@@ -31,6 +28,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   // text-align: center;
   color: #2c3e50;
+  flex-direction: column;
 }
 
 #nav {
@@ -44,6 +42,11 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.inner {
+  width: 70%;
+  background-color: rgba(211, 211, 211, 0.24);
 }
 </style>
 
@@ -72,8 +75,15 @@ input[type="button"] {
     outline-offset: -2px;
   }
 }
+
 .flex {
   display: flex;
   align-items: flex-start;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
